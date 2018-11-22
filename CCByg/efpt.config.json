@@ -1,0 +1,1 @@
+﻿{"ContextClassName":"CcbygContext","DefaultDacpacSchema":null,"IdReplace":false,"IncludeConnectionString":true,"OutputPath":"","ProjectRootNamespace":"CCByg","SelectedToBeGenerated":0,"Tables":["dbo.ItemAllocation","dbo.Items","dbo.Project","dbo.Staff"],"UseDatabaseNames":false,"UseFluentApiOnly":true,"UseHandleBars":false,"UseInflector":true}
