@@ -4,10 +4,13 @@ using System.Linq;
 
 namespace CCByg.Model
 {
-    public class ItemLogic
-    {
         public partial class Item
         {
+            public Item(string name, int amountAvailable)
+            {
+
+            }
+
             public void AddItem(Model.Item item)
             {
                 Main.DbContext.Items.Add(item);
@@ -29,5 +32,4 @@ namespace CCByg.Model
                 Main.DbContext.SaveChanges();
             }
         }
-    }
 }

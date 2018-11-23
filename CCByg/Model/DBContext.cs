@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace CCByg.Model
 {
@@ -15,6 +17,7 @@ namespace CCByg.Model
 
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<ItemAllocation> ItemAllocations { get; set; }
+        public virtual DbSet<Logbook> Logbooks { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
 
@@ -22,7 +25,8 @@ namespace CCByg.Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=ccbyg.database.windows.net;Initial Catalog=CCByg;Persist Security Info=True;User ID=ccbyg;Password=Database123");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Data Source=ccbyg.database.windows.net;Initial Catalog=CCByg;User ID=ccbyg;Password=Database123");
             }
         }
 
@@ -50,21 +54,43 @@ namespace CCByg.Model
 
                 entity.Property(e => e.Amount).HasColumnName("amount");
 
-                entity.Property(e => e.ItemId).HasColumnName("itemId");
+                entity.Property(e => e.FkItemId).HasColumnName("fk_itemId");
 
-                entity.Property(e => e.ProjectId).HasColumnName("projectId");
+                entity.Property(e => e.FkProjectId).HasColumnName("fk_projectId");
 
-                entity.HasOne(d => d.Item)
+                entity.HasOne(d => d.FkItem)
                     .WithMany(p => p.ItemAllocations)
-                    .HasForeignKey(d => d.ItemId)
+                    .HasForeignKey(d => d.FkItemId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ItemAlloc__itemI__5070F446");
+                    .HasConstraintName("FK__ItemAlloc__fk_it__7B5B524B");
 
-                entity.HasOne(d => d.Project)
+                entity.HasOne(d => d.FkProject)
                     .WithMany(p => p.ItemAllocations)
-                    .HasForeignKey(d => d.ProjectId)
+                    .HasForeignKey(d => d.FkProjectId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ItemAlloc__proje__4F7CD00D");
+                    .HasConstraintName("FK__ItemAlloc__fk_pr__7A672E12");
+            });
+
+            modelBuilder.Entity<Logbook>(entity =>
+            {
+                entity.ToTable("Logbook");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Action)
+                    .IsRequired()
+                    .HasColumnName("action")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasColumnName("name")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Type)
+                    .IsRequired()
+                    .HasColumnName("type")
+                    .HasMaxLength(50);
             });
 
             modelBuilder.Entity<Project>(entity =>
@@ -73,17 +99,20 @@ namespace CCByg.Model
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.Adress)
-                    .HasColumnName("adress")
-                    .HasMaxLength(50);
+                entity.Property(e => e.Address)
+                    .IsRequired()
+                    .HasColumnName("address")
+                    .HasMaxLength(100);
 
                 entity.Property(e => e.Deadline)
                     .HasColumnName("deadline")
                     .HasColumnType("date");
 
-                entity.Property(e => e.Name)
-                    .HasColumnName("name")
-                    .HasMaxLength(50);
+                entity.Property(e => e.Description)
+                    .HasColumnName("description")
+                    .HasMaxLength(250);
+
+                entity.Property(e => e.IsFinished).HasColumnName("isFinished");
 
                 entity.Property(e => e.Start)
                     .HasColumnName("start")
@@ -91,10 +120,6 @@ namespace CCByg.Model
 
                 entity.Property(e => e.Telephone)
                     .HasColumnName("telephone")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Zipcode)
-                    .HasColumnName("zipcode")
                     .HasMaxLength(50);
             });
 
@@ -104,9 +129,9 @@ namespace CCByg.Model
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.Adress)
-                    .HasColumnName("adress")
-                    .HasMaxLength(50);
+                entity.Property(e => e.Address)
+                    .HasColumnName("address")
+                    .HasMaxLength(100);
 
                 entity.Property(e => e.EmployedSince)
                     .HasColumnName("employedSince")
@@ -123,10 +148,6 @@ namespace CCByg.Model
 
                 entity.Property(e => e.Telephone)
                     .HasColumnName("telephone")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Zipcode)
-                    .HasColumnName("zipcode")
                     .HasMaxLength(50);
             });
 

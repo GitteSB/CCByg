@@ -122,14 +122,16 @@
     <Compile Include="Model\DBContext.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\ItemAllocation.cs" />
+    <Compile Include="Model\Logbook.cs" />
     <Compile Include="Model\ItemLogic.cs" />
     <Compile Include="Model\Main.cs" />
+    <Compile Include="Model\ProjectLogic.cs" />
+    <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\Staff.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\Staff.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

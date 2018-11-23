@@ -8,6 +8,7 @@ namespace CCByg.Model
     {
         static Main()
         {
+
         }
 
         public static DBContext DbContext { get; }
