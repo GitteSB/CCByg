@@ -17,12 +17,12 @@
             <ColumnDefinition Width="0.2*" />
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="1" Grid.Column="0"  VerticalAlignment="Top">
+        <StackPanel Grid.Row="1" Grid.Column="0" Height="auto" Width="auto">
 
-            <Button Content="Hjem" HorizontalAlignment="Stretch" Margin="20,75,20,0" VerticalAlignment="Stretch" Height="50" Click="Button_Click"/>
+            <Button Content="Hjem" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="50" Click="Button_Click"/>
 
 
-            <Button Content="Lager" HorizontalAlignment="Stretch" Margin="20,100,20,0" VerticalAlignment="Stretch" Height="50" Click="Button_Click">
+            <Button Content="Lager" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="50" Click="Button_Click">
 
                 <Button.Flyout>
                     <MenuFlyout Placement="Bottom">
@@ -33,7 +33,7 @@
                 </Button.Flyout>
             </Button>
 
-            <Button Content="Projekter" HorizontalAlignment="Stretch" Margin="20,150,20,0" VerticalAlignment="Stretch" Height="50" Click="Button_Click">
+            <Button Content="Projekter" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="50" Click="Button_Click">
 
                 <Button.Flyout>
                     <MenuFlyout Placement="Bottom">
@@ -45,7 +45,7 @@
                 </Button.Flyout>
             </Button>
 
-            <Button Content="Medarbejdere" HorizontalAlignment="Stretch" Margin="20,150,20,0" VerticalAlignment="Stretch" Height="50" Click="Button_Click">
+            <Button Content="Medarbejdere" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="50" Click="Button_Click">
 
                 <Button.Flyout>
                     <MenuFlyout Placement="Bottom">
@@ -61,7 +61,7 @@
         </StackPanel>
 
         <Grid Grid.Row="1" Grid.Column="1">
-            <TextBlock HorizontalAlignment="Center"  Text="Update-feed" VerticalAlignment="Top" Height="300" Width="600" Margin="0,400,0,0"/>
+            <TextBlock HorizontalAlignment="Center" Text="Update-feed" VerticalAlignment="Center" Height="400" Width="600"/>
         </Grid>
 
 
