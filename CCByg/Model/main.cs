@@ -1,6 +1,7 @@
 ﻿
 using System.Diagnostics;
 using System.Linq;
+using CCByg.ViewModel;
 
 namespace CCByg.Model
 {
@@ -12,5 +13,8 @@ namespace CCByg.Model
         }
 
         public static DBContext DbContext { get; }
+
+        public static MainPageViewModel MainPageVMContext { get; }
+
     }
 }
