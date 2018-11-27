@@ -15,27 +15,5 @@ namespace CCByg.View
         {
             this.InitializeComponent();
         }
-
-        private void NavigationView_OnItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
-        {
-            if (args.InvokedItem is TextBlock itemContent)
-            {
-                switch (itemContent.Tag)
-                {
-                    case "Nav_Home":
-                        Main.MainPageVMContext.MainPage.ContentFrame.Navigate(typeof(FrontPage));
-                        break;
-                    case "Nav_Inventory":
-                        Main.MainPageVMContext.MainPage.ContentFrame.Navigate(typeof(InventoryPage));
-                        break;
-                    case "Nav_Project":
-                        Main.MainPageVMContext.MainPage.ContentFrame.Navigate(typeof(ProjectPage));
-                        break;
-                    case "Nav_Staff":
-                        Main.MainPageVMContext.MainPage.ContentFrame.Navigate(typeof(StaffPage));
-                        break;
-                }
-            }
-        }
     }
 }

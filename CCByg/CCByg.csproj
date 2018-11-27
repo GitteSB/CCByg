@@ -123,27 +123,24 @@
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\ItemAllocation.cs" />
     <Compile Include="Model\Logbook.cs" />
-    <Compile Include="Model\ItemLogic.cs" />
-    <Compile Include="Model\Main.cs" />
-    <Compile Include="Model\ProjectLogic.cs" />
     <Compile Include="Model\Project.cs" />
     <Compile Include="Model\Staff.cs" />
-    <Compile Include="ViewModel\MainPageViewModel.cs" />
-    <Compile Include="View\FrontPage.xaml.cs">
-      <DependentUpon>FrontPage.xaml</DependentUpon>
+    <Compile Include="ViewModel\AppViewModel.cs" />
+    <Compile Include="View\FrontView.xaml.cs">
+      <DependentUpon>FrontView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\InventoryPage.xaml.cs">
-      <DependentUpon>InventoryPage.xaml</DependentUpon>
+    <Compile Include="View\InventoryView.xaml.cs">
+      <DependentUpon>InventoryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\ProjectPage.xaml.cs">
-      <DependentUpon>ProjectPage.xaml</DependentUpon>
+    <Compile Include="View\ProjectView.xaml.cs">
+      <DependentUpon>ProjectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\StaffPage.xaml.cs">
-      <DependentUpon>StaffPage.xaml</DependentUpon>
+    <Compile Include="View\EmployeeView.xaml.cs">
+      <DependentUpon>EmployeeView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -168,11 +165,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\FrontPage.xaml">
+    <Page Include="View\FrontView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\InventoryPage.xaml">
+    <Page Include="View\InventoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,11 +177,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\ProjectPage.xaml">
+    <Page Include="View\ProjectView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\StaffPage.xaml">
+    <Page Include="View\EmployeeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,6 +196,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Commands">
+      <HintPath>Extensions\Commands.dll</HintPath>
+    </Reference>
+    <Reference Include="Extensions">
+      <HintPath>Extensions\Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModel">
+      <HintPath>Extensions\ViewModel.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
