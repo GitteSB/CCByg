@@ -17,7 +17,7 @@
             <ColumnDefinition Width="0.2*" />
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <NavigationView Grid.Column="0" Grid.Row="1" IsPaneOpen="True">
+        <NavigationView Grid.Column="0" Grid.Row="1" x:Name="MainMenu" Loaded="MainMenu_Loaded" SelectionChanged="MainMenu_SelectionChanged" ItemInvoked="MainMenu_ItemInvoked" IsTabStop="False" Header="CCByg" IsPaneOpen="True" IsSettingsVisible="False">
             <NavigationView.MenuItems>
                 <NavigationViewItem>
                     Én ting

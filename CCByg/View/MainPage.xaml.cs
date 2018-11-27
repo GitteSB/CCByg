@@ -25,5 +25,20 @@ namespace CCByg.View
         {
 
         }
+
+        private void MainMenu_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MainMenu_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+
+        }
+
+        private void MainMenu_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+
+        }
     }
 }
