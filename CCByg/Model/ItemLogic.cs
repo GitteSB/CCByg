@@ -8,7 +8,8 @@ namespace CCByg.Model
         {
             public Item(string name, int amountAvailable)
             {
-
+                Name = name;
+                AmountAvailable = amountAvailable;
             }
 
             public void AddItem(Model.Item item)
