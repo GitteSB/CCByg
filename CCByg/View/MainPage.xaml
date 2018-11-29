@@ -72,7 +72,6 @@
 
         <Grid Grid.Row="1" Grid.Column="1">
             <Frame x:Name="ContentFrame" x:FieldModifier="public"></Frame>
-            
         </Grid>
 
 

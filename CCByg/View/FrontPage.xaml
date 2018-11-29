@@ -9,6 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock>frontpage</TextBlock>
+        <Image Source="Assets\img\headerhjside.png"/>
     </Grid>
 </Page>

@@ -26,7 +26,7 @@ namespace CCByg.View
                         Main.MainPageVMContext.MainPage.ContentFrame.Navigate(typeof(FrontPage));
                         break;
                     case "Nav_Inventory":
-                        Main.MainPageVMContext.MainPage.ContentFrame.Navigate(typeof(InventoryPage));
+                        ContentFrame.Navigate();
                         break;
                     case "Nav_Project":
                         Main.MainPageVMContext.MainPage.ContentFrame.Navigate(typeof(ProjectPage));
